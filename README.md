@@ -35,7 +35,7 @@ Your current keyboard typings will be added to the `data-url` and sent to the en
 
 ## Styling
 
-It is not using shadow-DOM so you can just style it using a normal stylesheet. 
+It is an open element, not using shadow-DOM, so you can style it from the outside. Just use a stylesheet. 
 
 ## Demo
 
