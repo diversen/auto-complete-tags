@@ -111,9 +111,8 @@ class AutoCompleteTags extends HTMLElement {
 					this.loadedTags = await loadTags(current)
 					this.buildTagsList()
 					this.skipLoadTags = false;
-				}, waitTime)
-				
-					
+				}, waitTime);
+                	
 			}
 		}, false);
 	}
