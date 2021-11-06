@@ -39,7 +39,7 @@ It is not using shadow-DOM so you can just style it using a normal stylesheet.
 
 ## Demo
 
-See: (index.html)[index.html]
+See: [index.html](index.html)
 
 
 
