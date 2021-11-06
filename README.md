@@ -2,6 +2,7 @@
 
 A custom HTML element that let's a user auto-complete-tags fetching data from a URL: 
 
+~~~html
     <form method="post" action="/post.php">
 	<auto-complete-tags
 		data-wait="500" 
@@ -18,3 +19,5 @@ A custom HTML element that let's a user auto-complete-tags fetching data from a 
 		customElements.define('auto-complete-tags', AutoCompleteTags);
 
 	</script>
+
+~~~

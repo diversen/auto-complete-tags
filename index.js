@@ -73,8 +73,6 @@ class AutoCompleteTags extends HTMLElement {
 		let position = -1;
 		let timer = null;
 
-		
-
 		this.enter.addEventListener("keyup", async (e) => {
 
 			if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
@@ -139,7 +137,7 @@ class AutoCompleteTags extends HTMLElement {
 
 		this.setTagsString(all_tags)
 		
-	}AutoCompleteTags
+	}
 
 	setTagsString(all_tags) {
 
