@@ -1,6 +1,6 @@
 # Auto complete tags
 
-A custom web component that will fetch `tag` suggestions from a endpoint data: 
+A custom web component that will fetch `tag` suggestions from an endpoint: 
 
 ~~~html
 
