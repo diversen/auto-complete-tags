@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Autosuggest</title>
+	<style>
+
+		auto-complete-tags {
+			display: block;
+			padding-bottom: 8px;
+		}
+
+		auto-complete-tags >.suggest {
+			list-style: none;
+			padding: 3px 0px;
+			max-height: 150px;
+			overflow-y: auto;
+			position: absolute;
+
+			width: 180px;
+			display: block;
+			
+		}
+
+		auto-complete-tags > .suggest> div {
+			text-align: left;
+			cursor: pointer;
+			padding: 0px 10px;
+			background-color: whitesmoke;
+		}
+
+
+		auto-complete-tags > .suggest> div.selected {
+			background-color:thistle;
+		}
+
+		auto-complete-tags >.entered>span {
+			background-color: grey;
+			padding: 4px;
+			color: white;
+			margin: 4px;
+		}
+
+	</style>
+
+</head>
+
+<body>
+	<h1>Auto complete custom element</h1>
+
+	<p>
+		Choose between:
+		'black', 'blue', 'red', 'yellow', 'grey', 'purple', 'white', 'green'
+	</p>
+
+	<form method="post" action="/post.php">
+	<auto-complete-tags
+		data-wait="500" 
+		data-url="/tags.php?search=" 
+		data-complete-keys="Enter"
+		name="tags" 
+		value="grey, blue, ">
+	</auto-complete-tags>
+	<input type="submit" name="submit" value="send" />
+	</form>
+	<script type="module">
+
+		import {AutoCompleteTags} from '/index.js';
+		customElements.define('auto-complete-tags', AutoCompleteTags);
+
+	</script>
+	
+
+</body>
+</html>
