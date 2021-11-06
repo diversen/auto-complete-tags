@@ -4,22 +4,22 @@ A custom web component that will fetch `tag` suggestions from a data url (or API
 
 ~~~html
 
-    <form method="post" action="/post.php">
-		<auto-complete-tags
-			data-wait="500" 
-			data-url="/tags.php?search=" 
-			data-complete-keys="Enter"
-			name="tags" 
-			value="grey, blue, ">
-		</auto-complete-tags>
-		<input type="submit" name="submit" value="send" />
-	</form>
-	<script type="module">
+<form method="post" action="/post.php">
+    <auto-complete-tags
+        data-wait="500" 
+        data-url="/tags.php?search=" 
+        data-complete-keys="Enter"
+        name="tags" 
+        value="grey, blue, ">
+    </auto-complete-tags>
+    <input type="submit" name="submit" value="send" />
+</form>
+<script type="module">
 
-		import {AutoCompleteTags} from '/index.js';
-		customElements.define('auto-complete-tags', AutoCompleteTags);
+    import {AutoCompleteTags} from '/index.js';
+    customElements.define('auto-complete-tags', AutoCompleteTags);
 
-	</script>
+</script>
 
 ~~~
 
