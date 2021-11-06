@@ -1,8 +1,6 @@
 class AutoCompleteTags extends HTMLElement {
 
-	attributeChangedCallback() {
-		console.log('something happend');
-	}
+	attributeChangedCallback() {}
 
 	/**
 	 * Called when element is created
@@ -30,19 +28,19 @@ class AutoCompleteTags extends HTMLElement {
 		this.loadedTags = []
 
 		// read from auto-complete data-url
-		const suggest_url = this.dataset.url;
+		const suggestUrl = this.dataset.url;
 
 		// function for fetching suggestions
 		async function loadTags(search) {
-			const response = await fetch(suggest_url + search);
+			const response = await fetch(suggestUrl + search);
 			const names = await response.json();
 			return names
 		}
 
 		// Default wait time before autocomplete tries to load tags from URL
-		let wait_time = 500;
+		let waitTime = 500;
 		if (this.dataset.wait){
-			wait_time = this.dataset.wait;
+			waitTime = this.dataset.wait;
 		}
 
 		let completeKeys = ['Enter']
@@ -113,7 +111,7 @@ class AutoCompleteTags extends HTMLElement {
 					this.loadedTags = await loadTags(current)
 					this.buildTagsList()
 					this.skipLoadTags = false;
-				}, wait_time)
+				}, waitTime)
 				
 					
 			}
@@ -124,27 +122,27 @@ class AutoCompleteTags extends HTMLElement {
 	 * Get selected tag from dropdown
 	 */
 	setSelectedTag() {
-		let selected_tag = this.getSelectedTag();
+		let selectedTag = this.getSelectedTag();
 		// If not selected then the value is manually input
 		
-		if (!selected_tag) {
-			selected_tag = this.getCurrentInput();
+		if (!selectedTag) {
+			selectedTag = this.getCurrentInput();
 		}
 
-		let all_tags = this.getAllTags();
-		all_tags.pop();
-		all_tags.push(selected_tag)
+		let allTags = this.getAllTags();
+		allTags.pop();
+		allTags.push(selectedTag)
 
-		this.setTagsString(all_tags)
+		this.setTagsString(allTags)
 		
 	}
 
-	setTagsString(all_tags) {
+	setTagsString(allTags) {
 
-		all_tags = all_tags.map( val => val.trim())
-		all_tags = Array.from(new Set(all_tags));
+		allTags = allTags.map( val => val.trim())
+		allTags = Array.from(new Set(allTags));
 		
-		this.enter.value = all_tags.join(', ')
+		this.enter.value = allTags.join(', ')
 		if (this.enter.value !== '') {
 			this.enter.value += ', '
 		}
@@ -152,9 +150,9 @@ class AutoCompleteTags extends HTMLElement {
 
 	deleteTag() {
 
-		let all_tags = this.getAllTags();
-		all_tags.pop();
-		this.setTagsString(all_tags)
+		let allTags = this.getAllTags();
+		allTags.pop();
+		this.setTagsString(allTags)
 	}
 
 	getSelectedTag() {
@@ -166,23 +164,23 @@ class AutoCompleteTags extends HTMLElement {
 
 	getAllTags() {
 		let value = this.enter.value
-		let all_tags = value.split(',')
+		let allTags = value.split(',')
 		
-		all_tags = all_tags.filter( (val) => {
+		allTags = allTags.filter( (val) => {
 			if (val.trim() !== '') {
 				return true
 			}
 		})
 
-		all_tags = all_tags.map( val => val.trim())
-		return all_tags;
+		allTags = allTags.map( val => val.trim())
+		return allTags;
 	}
 
 
 	getCurrentInput() {
 		
-		let entered_tags = this.getAllTags();
-		let current = entered_tags.pop();
+		let enteredTags = this.getAllTags();
+		let current = enteredTags.pop();
 		if (!current) {
 			current = '';
 		}
