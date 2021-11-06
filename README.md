@@ -16,7 +16,7 @@ A custom web component that will fetch `tag` suggestions from an endpoint:
 </form>
 <script type="module">
 
-    import {AutoCompleteTags} from 'https://unpkg.com/auto-complete-tags@1.0.0/index.js';
+    import {AutoCompleteTags} from 'https://unpkg.com/auto-complete-tags@1.0.1/index.js';
     customElements.define('auto-complete-tags', AutoCompleteTags);
 
 </script>
