@@ -53,10 +53,10 @@
 		'black', 'blue', 'red', 'yellow', 'grey', 'purple', 'white', 'green'
 	</p>
 
-	<form method="post" action="/post.php">
+	<form id="form" method="post" action="#">
 	<auto-complete-tags
 		data-wait="500" 
-		data-url="/tags.php?search=" 
+		data-url="https://api.10kilobyte.com/tags.php?search=" 
 		data-complete-keys="Enter"
 		name="tags" 
 		value="grey, blue, ">
@@ -65,9 +65,19 @@
 	</form>
 	<script type="module">
 
+		// Remote
+		// import {AutoCompleteTags} from 'https://unpkg.com/auto-complete-tags@1.0.0/index.js';
 		import {AutoCompleteTags} from '/index.js';
 		customElements.define('auto-complete-tags', AutoCompleteTags);
 
+		const form = document.getElementById('form');
+		form.addEventListener('submit', function (e){
+			e.preventDefault();
+			const formData = new FormData(form)
+			let tags = '';
+			alert(formData.get('tags'))
+			
+		})
 	</script>
 	
 

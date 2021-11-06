@@ -1,6 +1,6 @@
 # Auto complete tags
 
-A custom web component that will fetch `tag` suggestions from a data url (or API) endpoint: 
+A custom web component that will fetch `tag` suggestions from a endpoint data: 
 
 ~~~html
 
@@ -16,12 +16,14 @@ A custom web component that will fetch `tag` suggestions from a data url (or API
 </form>
 <script type="module">
 
-    import {AutoCompleteTags} from '/index.js';
+    import {AutoCompleteTags} from 'https://unpkg.com/auto-complete-tags@1.0.0/index.js';
     customElements.define('auto-complete-tags', AutoCompleteTags);
 
 </script>
 
 ~~~
+
+## Options
 
 `data-wait` specifies how many milli-seconds to wait before fetching data from the endpoint
 
@@ -30,6 +32,18 @@ A custom web component that will fetch `tag` suggestions from a data url (or API
 Your current keyboard typings will be added to the `data-url` and sent to the endpoint
 
 `data-complete-keys` is the keys that will auto-complete the selection. `ArrowUp` and `ArrowDown` are used for moving up and down.
+
+## Styling
+
+It is not using shadow-DOM so you can just style it using a normal stylesheet. 
+
+## Demo
+
+clone the repo and start a 
+
+
+
+
 
 ## License
 
