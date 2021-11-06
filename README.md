@@ -41,9 +41,7 @@ It is not using shadow-DOM so you can just style it using a normal stylesheet.
 
 See: [index.html](index.html)
 
-
-
-
+You can see the demo here [https://diversen.github.io/auto-complete-tags/](https://diversen.github.io/auto-complete-tags/)
 
 ## License
 
