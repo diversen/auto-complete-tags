@@ -29,7 +29,6 @@
 			background-color: whitesmoke;
 		}
 
-
 		auto-complete-tags > .suggest> div.selected {
 			background-color:thistle;
 		}
@@ -63,11 +62,11 @@
 	</auto-complete-tags>
 	<input type="submit" name="submit" value="send" />
 	</form>
+	
 	<script type="module">
 
 		// Remote
-		// import {AutoCompleteTags} from 'https://unpkg.com/auto-complete-tags@1.0.0/index.js';
-		import {AutoCompleteTags} from '/index.js';
+		import {AutoCompleteTags} from 'https://unpkg.com/auto-complete-tags@1.0.0/index.js';
 		customElements.define('auto-complete-tags', AutoCompleteTags);
 
 		const form = document.getElementById('form');
@@ -79,7 +78,5 @@
 			
 		})
 	</script>
-	
-
 </body>
 </html>

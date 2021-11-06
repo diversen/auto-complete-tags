@@ -39,7 +39,7 @@ It is not using shadow-DOM so you can just style it using a normal stylesheet.
 
 ## Demo
 
-clone the repo and start a 
+See: (index.html)[index.html]
 
 
 
