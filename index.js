@@ -106,13 +106,13 @@ class AutoCompleteTags extends HTMLElement {
 					current = ''
 				}
 
-				clearTimeout(timer); 
-       			timer = setTimeout( async () => {
+				clearTimeout(timer);
+                timer = setTimeout( async () => {
 					this.loadedTags = await loadTags(current)
 					this.buildTagsList()
 					this.skipLoadTags = false;
 				}, waitTime);
-                	
+
 			}
 		}, false);
 	}
