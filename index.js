@@ -191,8 +191,11 @@ class AutoCompleteTags extends HTMLElement {
         this.loadedTags.forEach((title) => {
             const li = document.createElement("div");
             li.appendChild(document.createTextNode(title));
-            li.addEventListener('click', function (e) {
-                // Maybe allow click add at some time
+            li.addEventListener('click', (e) => {
+                li.classList.add('selected');
+                this.setSelectedTag();
+                this.enter.focus();
+                this.suggest.innerHTML = '';
             })
             this.suggest.appendChild(li);
         })

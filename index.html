@@ -16,7 +16,6 @@
 			max-height: 150px;
 			overflow-y: auto;
 			position: absolute;
-
 			width: 180px;
 			display: block;
 			
@@ -66,7 +65,8 @@
 	<script type="module">
 
 		// Remote
-		import {AutoCompleteTags} from 'https://unpkg.com/auto-complete-tags@1.0.1/index.js';
+		// import {AutoCompleteTags} from '/index.js';
+		import {AutoCompleteTags} from 'https://unpkg.com/auto-complete-tags@1.0.2/index.js';
 		customElements.define('auto-complete-tags', AutoCompleteTags);
 
 		const form = document.getElementById('form');
