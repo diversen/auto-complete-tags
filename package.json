@@ -1,0 +1,32 @@
+{
+  "name": "auto-complete-tags",
+  "version": "1.0.0",
+  "description": "lightweight, efficient auto-complete-tags input",
+  "keywords": [
+        "tags",
+        "tagging",
+        "component",
+        "web component",
+        "tag web component",
+        "tag",
+        "ui"
+  ],
+  "main": "index.js",
+  "type": "module",
+  
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dennis Iversen",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diversen/auto-complete-tags.git"
+  },
+  "bugs": {
+    "url": "https://github.com/diversen/auto-complete-tags/issues"
+  },
+  "homepage": "https://github.com/diversen/auto-complete-tags#readme"
+}
