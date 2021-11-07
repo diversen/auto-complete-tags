@@ -14,17 +14,14 @@ class AutoCompleteTags extends HTMLElement {
      */
     connectedCallback() {
 
-        console.log('connected')
         const name = this.getAttribute("name")
         this.innerHTML = `
-			<span class="entered"></span>
 			<input name="${name}" type="text" class="enter" value="">
 			<div class="suggest"></div>
 		`
 
         this.enter = this.querySelector('.enter');
         this.suggest = this.querySelector('.suggest')
-        this.entered = this.querySelector('.entered');
         this.loadedTags = []
 
         // read from auto-complete data-url
@@ -114,6 +111,14 @@ class AutoCompleteTags extends HTMLElement {
                 }, waitTime);
             }
         }, false);
+
+        this.enter.addEventListener('blur', (e) => {
+            // If no related target then we are not on this.enter element anymore.
+            // Then clear dropdown list
+            if(e.relatedTarget) {
+                this.suggest.innerHTML = ``;
+            }
+        })
     }
 
     /**
@@ -197,6 +202,7 @@ class AutoCompleteTags extends HTMLElement {
                 this.enter.focus();
                 this.suggest.innerHTML = '';
             })
+
             this.suggest.appendChild(li);
         })
     }
